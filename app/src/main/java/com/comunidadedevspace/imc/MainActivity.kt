@@ -1,5 +1,6 @@
 package com.comunidadedevspace.imc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -30,7 +31,10 @@ class MainActivity : AppCompatActivity() {
                 val altura: Float = alturaStr.toFloat()
                 val resultado = peso /(altura * altura)
 
-                println(resultado)
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra(KEY_RESULT_IMC,resultado)
+                startActivity(intent)
+
             }
 
 
@@ -40,3 +44,4 @@ class MainActivity : AppCompatActivity() {
 
 
 }
+
